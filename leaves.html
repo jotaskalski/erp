@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERP Portal - Resultados</title>
+    <link rel="stylesheet" href="css/leaves.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo-container">
+                <div class="logo">ERP</div>
+                <h2>Portal</h2>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li class="active"><a href="#">Resultados</a></li>
+                    <li><a href="#">Questionários</a></li>
+                    <!-- <li><a href="#">Configurações</a></li> -->
+                    <!-- Logout Button -->
+                    <li id="logoutBtnContainer">
+                        <a href="#" id="logoutBtn">
+                            <span class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+                                    <polyline points="16 17 21 12 16 7"/>
+                                    <line x1="21" y1="12" x2="9" y2="12"/>
+                                </svg>
+                            </span>
+                            <span>Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <img src="50x50RoundedProfileIcon.svg" alt="User avatar">
+                    </div>
+                    <div class="user-details">
+                        <h3>ERP Portal</h3>
+                        <p>. . .</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="greeting-section">
+                    <h1 id="dynamicGreeting">Hello, User!</h1>
+                    <p>Bem-vindo a página de resultados.</p>
+                </div>
+                <!-- <div class="header-actions">
+                    <button class="create-leave-btn">Create Leave</button>
+                </div> -->
+            </header>
+            <!-- Tabs -->
+            <div class="tab-container">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="leave-summary">Resultados</button>
+                    <button class="tab-btn" data-tab="accrual-balances">Detalhes</button>
+                </div>
+            </div>
+            <!-- Tab Content -->
+            <div class="tab-content">
+                <!-- Leave Summary Tab -->
+                <div class="tab-pane active" id="leave-summary">
+                    <div class="filters">
+                        <select class="filter-dropdown">
+                            <option>Categoria</option>
+                            <option>Jovem Aprendiz</option>
+                            <option>Empresa</option>
+                            <option>Setor</option>
+                        </select>
+                        <select class="filter-dropdown">
+                            <option>Status</option>
+                            <option>Resolvido</option>
+                            <option>Em Aberto</option>
+                            <option>Alerta</option>
+                        </select>
+                        <input type="date" class="filter-date">
+                        <input type="date" class="filter-date">
+                        <button class="clear-btn">Clear</button>
+                    </div>
+                    <table class="leave-table">
+                        <thead>
+                            <tr>
+                                <th>Start Date</th>
+                                <th>End Date</th>
+                                <th>Type</th>
+                                <th>Duration</th>
+                                <th>Status</th>
+                                <th>Attachments</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2025-03-10</td>
+                                <td>2025-03-15</td>
+                                <td>Empresa</td>
+                                <td>5 days</td>
+                                <td><span class="status-badge status-approved">Resolvido</span></td>
+                                <td><a href="#">Questionario001f.pdf</a></td>
+                                <td>
+                                    <svg class="edit-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M17 3a2.85 2.85 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/>
+                                    </svg>
+                                    <svg class="delete-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                                    </svg>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2025-04-01</td>
+                                <td>2025-04-03</td>
+                                <td>Setor</td>
+                                <td>2 days</td>
+                                <td><span class="status-badge status-pending">Em Aberto</span></td>
+                                <td><a href="#">Questionario054j.pdf</a></td>
+                                <td>
+                                    <svg class="edit-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M17 3a2.85 2.85 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/>
+                                    </svg>
+                                    <svg class="delete-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                                    </svg>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2025-05-15</td>
+                                <td>2025-05-18</td>
+                                <td>Setor</td>
+                                <td>3 days</td>
+                                <td><span class="status-badge status-canceled">Alerta</span></td>
+                                <td><a href="#">Questionario439s.pdf</a></td>
+                                <td>
+                                    <svg class="edit-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M17 3a2.85 2.85 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/>
+                                    </svg>
+                                    <svg class="delete-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                                    </svg>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- Accrual Balances Tab -->
+                <!-- <div class="tab-pane" id="accrual-balances">
+                    <div class="placeholder-content">
+                        <h2>Accrual Balances</h2>
+                        <p>Leave accrual balances coming soon.</p>
+                    </div>
+                </div> -->
+            </div>
+        </main>
+    </div>
+    <script src="js/auth.js"></script>
+    <script src="js/leaves.js"></script>
+</body>
+</html>

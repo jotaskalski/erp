@@ -1,0 +1,224 @@
+:root {
+    --primary-color: #7D63FE; /* Bright Purple */
+    --secondary-color: #BDA0E8; /* Lighter Purple */
+    --sidebar-bg: #2a2323; /* Dark Sidebar */
+    --sidebar-text: #EBE6FE;
+    --sidebar-active: #4b3d79;
+    --sidebar-hover: #4A3F6E;
+    --text-primary: #9296A9; /* Main Text */
+    --text-secondary: #D0D4D9; /* Secondary Text */
+    --bg-gradient: linear-gradient(145deg, #2a2323, #4b3d79); /* Page Background */
+    --card-bg: #FFFFFF; /* Card Background */
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.09);
+    --error-color: #4d0635; /* Matches Dashboard's Error Color */
+    --transition-speed: 0.3s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-gradient);
+    min-height: 100vh;
+}
+
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.login-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 32px;
+}
+
+/* .logo {
+    font-size: 22px;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--sidebar-active), var(--secondary-color));
+    color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    margin-right: 12px;
+} */
+
+.logo-container h1 {
+    font-size: 24px;
+    color: #2a2323; /* Matches Dashboard's Greeting Color */
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #2a2323; /* Matches Dashboard Text */
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-wrapper svg {
+    position: absolute;
+    left: 12px;
+    color: var(--sidebar-active);
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 12px 12px 12px 44px;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all var(--transition-speed) ease;
+}
+
+.input-wrapper input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(125, 99, 254, 0.1);
+}
+
+.input-wrapper input::placeholder {
+    color: var(--text-secondary);
+}
+
+.error-message {
+    color: var(--error-color);
+    font-size: 14px;
+    text-align: center;
+    min-height: 20px;
+}
+
+.login-button {
+    background: var(--sidebar-active);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+}
+
+.login-button:hover {
+    background: #6952d8; /* Slightly darker purple */
+}
+
+.login-button:active {
+    transform: translateY(1px);
+}
+
+/* Mobile/Tablet Responsiveness */
+@media (max-width: 767px) {
+    .dashboard-container {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 16px;
+        overflow-y: visible;
+    }
+    .main-content {
+        margin-left: 0;
+        padding: 16px;
+    }
+    .logo-container {
+        margin-bottom: 16px;
+    }
+    .nav-menu ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    .nav-menu ul li {
+        flex: 1 0 45%;
+    }
+    .nav-menu ul li a {
+        padding: 12px 16px;
+        font-size: 13px;
+    }
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 16px;
+    }
+    .header-actions {
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 12px;
+    }
+    .search-bar {
+        width: 100%;
+        margin-right: 0;
+    }
+    .tab-container {
+        padding: 0 16px;
+    }
+    .tabs {
+        flex-wrap: wrap;
+        gap: 12px;
+        overflow-x: auto;
+    }
+    .tab-btn {
+        flex: 1 1 30%;
+        padding: 12px;
+        font-size: 13px;
+    }
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    .documents-grid {
+        grid-template-columns: 1fr;
+    }
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+    .connection-stats {
+        flex-direction: column;
+    }
+    .stat-item {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        margin: 8px 0;
+    }
+}
