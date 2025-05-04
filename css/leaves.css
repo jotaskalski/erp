@@ -450,4 +450,56 @@ body {
         width: 100%;
         margin: 8px 0;
     }
+    .leave-table {
+        width: 100%;
+        overflow-x: auto; /* Allow horizontal scroll if needed */
+    }
+    
+    .leave-table th,
+    .leave-table td {
+        white-space: nowrap; /* Prevent text wrapping */
+    }
+    
+    /* Stack filters vertically on mobile */
+    .filters {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .filter-dropdown,
+    .filter-date {
+        width: 100%; /* Full width inputs */
+    }
+    .header {
+        padding: 16px;
+    }
+    
+    /* Make project cards stack vertically */
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Adjust table header visibility */
+    .leave-table th {
+        font-size: 12px;
+    }
+    
+    /* Hide first, second, and fourth columns */
+    .leave-table th:nth-child(1),
+    .leave-table td:nth-child(1),
+    .leave-table th:nth-child(2),
+    .leave-table td:nth-child(2),
+    .leave-table th:nth-child(4),
+    .leave-table td:nth-child(4),
+    .leave-table th:nth-child(7),
+    .leave-table td:nth-child(7) {
+        display: none;
+    }
+    
+    /* Add ellipsis for long text */
+    .leave-table td {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 150px;
+    }
 }

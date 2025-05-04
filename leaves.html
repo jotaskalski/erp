@@ -164,5 +164,45 @@
     </div>
     <script src="js/auth.js"></script>
     <script src="js/leaves.js"></script>
+
+    <script>
+        // Hide sidebar on scroll (mobile only)
+        document.addEventListener('DOMContentLoaded', function () {
+            const sidebar = document.querySelector('.sidebar');
+            let lastScrollTop = 0;
+        
+            window.addEventListener('scroll', () => {
+                const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        
+                if (window.innerWidth <= 767) {
+                    if (currentScroll > lastScrollTop) {
+                        sidebar.style.transform = 'translateY(-100%)'; // Slide up
+                    } else {
+                        sidebar.style.transform = 'translateY(0)'; // Slide down
+                    }
+                }
+        
+                lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+            });
+        
+            // Reset sidebar visibility when user stops scrolling
+            let ticking = false;
+            window.addEventListener('scroll', () => {
+                if (!ticking && window.innerWidth <= 767) {
+                    window.requestAnimationFrame(() => {
+                        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+                        if (currentScroll > 50) {
+                            sidebar.style.transform = 'translateY(-100%)';
+                        } else {
+                            sidebar.style.transform = 'translateY(0)';
+                        }
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+        });
+    </script>
+    
 </body>
 </html>

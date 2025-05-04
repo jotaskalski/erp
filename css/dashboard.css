@@ -285,9 +285,12 @@ body {
 
 /* HRBP and Manager Section */
 .hrbp-manager {
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+    gap: 24px; */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
 }
 
 .profile {
@@ -688,5 +691,34 @@ body {
         justify-content: space-between;
         width: 100%;
         margin: 8px 0;
+    }
+
+
+
+    .profile {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .profile-image {
+        margin-bottom: 12px;
+        margin-right: 0;  /* Remove right margin if it exists */
+    }
+    
+    .profile-details {
+        width: 100%;
+    }
+    
+    .contact-detail {
+        justify-content: center;
+    }
+    .card {
+        min-width: 0;  /* Allow cards to shrink below their content size */
+    }
+    
+    .hrbp-manager .card {
+        width: 100%;  /* Make cards take full width on mobile */
+        margin-bottom: 16px;  /* Add space between stacked cards */
     }
 }
